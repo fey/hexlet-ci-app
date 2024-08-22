@@ -4,8 +4,6 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      NAME: 'tirion'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -14,8 +12,5 @@ jobs:
           cache: 'npm'
       - run: make install
       - run: make test
-      - name: Print to Log
-        id: print-to-log
-        uses: actions/hello-world-javascript-action@main
-        with:
-          who-to-greet: $NAME
+      - name: Print Hello from Hexlet
+        uses: hexlet-components/hello-from-hexlet-action@release
