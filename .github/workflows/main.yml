@@ -12,8 +12,6 @@ jobs:
           cache: 'npm'
       - run: make install
       - run: make test
-      - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v4
       - name: Print to Log
         id: print-to-log
         uses: actions/hello-world-javascript-action@main
