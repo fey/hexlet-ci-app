@@ -4,6 +4,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NAME: 'tirion'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -16,4 +18,4 @@ jobs:
         id: print-to-log
         uses: actions/hello-world-javascript-action@main
         with:
-          who-to-greet: 'tirion'
+          who-to-greet: $NAME
